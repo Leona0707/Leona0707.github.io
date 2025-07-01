@@ -36,33 +36,14 @@ function initPageAnimations() {
 
 // 滚动效果初始化
 function initScrollEffects() {
-    // 导航栏滚动效果
-    let lastScrollTop = 0;
-    const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // 导航栏背景透明度变化
-        if (scrollTop > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
-        }
-        
-        lastScrollTop = scrollTop;
-    });
-    
-    // 平滑滚动到锚点
+    // 移除导航栏滚动效果，保持颜色不变
+    // 保留平滑滚动到锚点功能
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
             if (targetElement) {
                 const offsetTop = targetElement.offsetTop - 80; // 考虑导航栏高度
                 window.scrollTo({

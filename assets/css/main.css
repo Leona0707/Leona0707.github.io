@@ -34,11 +34,12 @@ body.minimal-bg {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #181818;
+    background: #181818 !important;
     padding: 32px 0 0 0;
     max-width: 100vw;
     margin: 0 auto;
     border-bottom: 1.5px solid #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
 }
 
 .nav-container {
